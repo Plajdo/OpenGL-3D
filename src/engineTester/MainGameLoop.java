@@ -38,14 +38,13 @@ public class MainGameLoop {
 				1, 1,
 				1, 0
 		};
-		
-		RawModel model = loader.loadToVAO(vertices, textureCoords, indices);
-		ModelTexture texture = new ModelTexture(loader.loadTexture("image"));
-		TexturedModel texturedModel = new TexturedModel(model, texture);
-		
+
+        RawModel model = loader.loadToVAO(vertices, textureCoords, indices);
+        ModelTexture texture = new ModelTexture(loader.loadTexture("image"));
+        TexturedModel texturedModel = new TexturedModel(model, texture);
+
 		while(!Display.isCloseRequested()){
-			
-			renderer.prepare();
+            renderer.prepare();
 			shader.start();
 			renderer.render(texturedModel);
 			shader.stop();
